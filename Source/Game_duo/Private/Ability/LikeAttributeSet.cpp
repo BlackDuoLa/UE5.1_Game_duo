@@ -6,8 +6,8 @@
 
 ULikeAttributeSet::ULikeAttributeSet()
 {
-	//添加角色属性
-
+	//设置角色生命属性
+	//设置角色法力属性
 	InitHealth(50.f);
 	InitMaxHealth(100.f);
 	InitMana(40.f);
