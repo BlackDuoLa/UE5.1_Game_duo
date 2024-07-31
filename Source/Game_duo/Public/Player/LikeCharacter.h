@@ -22,7 +22,7 @@ public:
 	ALikeCharacter();
 
 	virtual void PossessedBy(AController* NewController) override;
-
+	//设置游戏状态的同步模式
 	virtual void OnRep_PlayerState()override;
 
 

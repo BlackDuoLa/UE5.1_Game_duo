@@ -6,6 +6,8 @@
 
 ULikeAttributeSet::ULikeAttributeSet()
 {
+	//添加角色属性
+
 	InitHealth(50.f);
 	InitMaxHealth(100.f);
 	InitMana(40.f);
@@ -18,7 +20,7 @@ ULikeAttributeSet::ULikeAttributeSet()
 void ULikeAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 
-
+	//设置角色属性的同步模式
 	DOREPLIFETIME_CONDITION_NOTIFY(ULikeAttributeSet, Health, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(ULikeAttributeSet, MaxHealth, COND_None, REPNOTIFY_Always);
 

@@ -1,12 +1,15 @@
 Binaries
 DerivedDataCache
+
 Intermediate
+
 Saved
 Build
 
 .vscode
 .vs
 .idea
+
 *.sln
 *.vsconfig
 
