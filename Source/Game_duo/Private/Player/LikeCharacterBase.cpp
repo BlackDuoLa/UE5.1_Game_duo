@@ -3,7 +3,7 @@
 
 #include "Player/LikeCharacterBase.h"
 
-// Sets default values
+// 这里面什么都没有
 ALikeCharacterBase::ALikeCharacterBase()
 {
  	
