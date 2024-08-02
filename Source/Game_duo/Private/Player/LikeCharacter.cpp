@@ -8,7 +8,7 @@
 
 ALikeCharacter::ALikeCharacter()
 {
-
+	
 
 }
 
@@ -55,6 +55,7 @@ void ALikeCharacter::InitAbilityActorInfo()
 			LikeHUD->InitOverlay(LikePlayerController, LikePlayerState, AbilitySystemComponent, AttributeSet);
 		}
 
+		InitializeDefaultAttributes();
 	}
 
 }

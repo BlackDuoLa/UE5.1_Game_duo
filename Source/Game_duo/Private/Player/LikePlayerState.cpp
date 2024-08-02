@@ -4,7 +4,7 @@
 #include "Player/LikePlayerState.h"
 #include "Ability/LikeAbilitySystemComponent.h"
 #include "Ability/LikeAttributeSet.h"
-
+#include <Net\UnrealNetwork.h>
 
 
 ALikePlayerState::ALikePlayerState()
@@ -21,7 +21,20 @@ ALikePlayerState::ALikePlayerState()
 
 }
 
+void ALikePlayerState::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(ALikePlayerState, Level);
+}
+
 UAbilitySystemComponent* ALikePlayerState::GetAbilitySystemComponent() const
 {
 	return AbilitySystemComponent;
+}
+
+void ALikePlayerState::OnRep_Level(int32 Oldlevel)
+{
+
+
 }

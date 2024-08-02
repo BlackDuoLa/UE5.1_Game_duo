@@ -18,13 +18,17 @@ class GAME_DUO_API ALikePlayerState : public APlayerState,public IAbilitySystemI
 public:
 	ALikePlayerState();
 
+	virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override;
+
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
 
+	FORCEINLINE int32 GetPlayerLevel() const { return Level; }
 
 protected:
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere)
 	TObjectPtr<UAbilitySystemComponent>AbilitySystemComponent;
 
 	UPROPERTY()
@@ -34,7 +38,12 @@ protected:
 
 private:
 
+	//添加玩家等级属性
+	UPROPERTY(VisibleAnywhere, ReplicatedUsing = OnRep_Level)
+	int32 Level = 1;
 
+	UFUNCTION()
+	void OnRep_Level(int32 Oldlevel);
 
 	
 };
