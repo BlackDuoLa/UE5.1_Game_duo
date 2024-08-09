@@ -1,9 +1,10 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
+#include "GameplayEffectTypes.h" 
 #include "LikeWidgetController.generated.h"
 
 
@@ -72,5 +73,8 @@ protected:
 	UPROPERTY(BlueprintReadOnly, Category = "WidgetController")
 	TObjectPtr<UAttributeSet>AttributeSet;
 
+	
 
 };
+
+

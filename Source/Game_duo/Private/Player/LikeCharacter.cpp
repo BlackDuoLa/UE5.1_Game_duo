@@ -4,6 +4,7 @@
 #include "Player/LikeCharacter.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Player/LikePlayerController.h" 
+#include "Ability/LikeAbilitySystemComponent.h"
 #include "UI/HUD/LikeHUD.h"
 
 ALikeCharacter::ALikeCharacter()
@@ -43,9 +44,14 @@ void ALikeCharacter::InitAbilityActorInfo()
 
 	LikePlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(LikePlayerState, this);
 	//把基类Base初始化的AbilitySystemComponent定义这是可以说是复制为=后面的参数
-
 	AbilitySystemComponent = LikePlayerState->GetAbilitySystemComponent();
+
 	//也把基类Base的AttributeSet，定义为LikePlayerState->GetAttributeSet();
+	AbilitySystemComponent->InitAbilityActorInfo(LikePlayerState, this);
+
+	//完成对ASC的初始化，这个是关于Tag的函数
+	Cast<ULikeAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
+
 	AttributeSet = LikePlayerState->GetAttributeSet();
 	
 	if (ALikePlayerController* LikePlayerController = Cast<ALikePlayerController>(GetController()))
