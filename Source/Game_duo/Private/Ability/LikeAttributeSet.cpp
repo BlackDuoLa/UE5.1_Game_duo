@@ -20,7 +20,7 @@ ULikeAttributeSet::ULikeAttributeSet()
 void ULikeAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 
-
+	//指定属性如何进行网络同步、Health：同步的类型、COND_None：无条件同步、REPNOTIFY_Always：无论值是否变化，只要进行同步就触发回调
 	//Primary Attributes
 	DOREPLIFETIME_CONDITION_NOTIFY(ULikeAttributeSet, Strength, COND_None, REPNOTIFY_Always);
 	DOREPLIFETIME_CONDITION_NOTIFY(ULikeAttributeSet, Intelligence, COND_None, REPNOTIFY_Always);
